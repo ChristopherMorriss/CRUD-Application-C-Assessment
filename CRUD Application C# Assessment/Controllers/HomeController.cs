@@ -22,7 +22,7 @@ namespace CRUD_Application_C__Assessment.Controllers
         {
             return View();
         }
-        public IActionResult Employee()
+        public IActionResult Employees()
         {
             return View();
         }
