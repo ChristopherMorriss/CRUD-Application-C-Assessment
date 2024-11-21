@@ -22,10 +22,6 @@ namespace CRUD_Application_C__Assessment.Controllers
         {
             return View();
         }
-        public IActionResult Companies()
-        {
-            return View();
-        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

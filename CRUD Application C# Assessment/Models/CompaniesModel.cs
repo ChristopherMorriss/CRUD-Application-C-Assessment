@@ -1,4 +1,5 @@
-﻿namespace CRUD_Application_C__Assessment.Models
+﻿
+namespace CRUD_Application_C__Assessment.Models
 {
     public class CompaniesModel
     {

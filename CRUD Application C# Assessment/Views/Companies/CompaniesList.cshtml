@@ -1,6 +1,6 @@
 ﻿@page
 @using CRUD_Application_C__Assessment.Views.Companies
-@model CRUD_Application_C__Assessment.Views.Companies.CompaniesModel
+@model CRUD_Application_C__Assessment.Models.CompaniesModel
 @{
     
 }
@@ -11,10 +11,10 @@
         View:
         <div>
             <a href="/companies/1">
-                    @ViewBag.Name <br />
-                    @ViewBag.Email <br />
-                    @ViewBag.Logo <br />
-                    @ViewBag.Website <br />
+                    @Model.Name <br />
+                    @Model.Email <br />
+                    @Model.Logo <br />
+                    @Model.Website <br />
             </a>
         </div>
         <div><a href="/companies/2">Company 2</a></div>
