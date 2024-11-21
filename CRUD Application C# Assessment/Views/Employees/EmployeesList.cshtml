@@ -1,0 +1,22 @@
+﻿@page
+@model CRUD_Application_C__Assessment.Views.Home.EmployeesModel
+@{
+    
+}
+
+<div class="text-center">
+    <h1 class="display-4">Employees Page</h1>
+    <div>
+        View:
+        <div>
+            <a href="/companies/1">
+                @ViewBag.First_name <br />
+                @ViewBag.Last_name <br />
+                @ViewBag.Company <br />
+                @ViewBag.Email <br />
+                @ViewBag.Phone_number <br />
+            </a>
+        </div>
+        <div><a href="/companies/2">Company 2</a></div>
+    </div>
+</div>

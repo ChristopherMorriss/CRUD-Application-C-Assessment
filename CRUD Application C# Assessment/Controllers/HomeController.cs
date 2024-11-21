@@ -22,10 +22,6 @@ namespace CRUD_Application_C__Assessment.Controllers
         {
             return View();
         }
-        public IActionResult Employees()
-        {
-            return View();
-        }
         public IActionResult Companies()
         {
             return View();
