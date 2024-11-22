@@ -1,0 +1,19 @@
+﻿@page
+@model CRUD_Application_C__Assessment.Views.Companies.CompanyEditModel
+@{
+}
+
+<h1 class="display-4">Edit Companies Page</h1>
+<div>
+        
+     <div>
+         <a href="/companies/1">
+                @ViewBag.Name <br />
+                @ViewBag.Email <br />
+                @ViewBag.Logo <br />
+                @ViewBag.Website <br />
+         </a>
+         <a asp-area="" asp-controller="Companies" asp-action="CompanyCreate">Edit Company</a>
+     </div>
+        
+</div>

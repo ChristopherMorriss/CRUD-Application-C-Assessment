@@ -11,12 +11,14 @@
         View:
         <div>
             <a href="/companies/1">
-                    @Model.Name <br /> 
-                    @Model.Email <br />
-                    @Model.Logo <br />
-                    @Model.Website <br />
+                    @ViewBag.Name <br /> 
+                    @ViewBag.Email <br />
+                    @ViewBag.Logo <br />
+                    @ViewBag.Website <br />
             </a>
+            <a asp-area="" asp-controller="Companies" asp-action="CompanyCreate">Create Company</a>
+            <a asp-area="" asp-controller="Companies" asp-action="CompanyEdit">Edit Company</a>
         </div>
-        <div><a href="/companies/2">Company 2</a></div>
+        
     </div>
 </div>
