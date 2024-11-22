@@ -38,7 +38,7 @@ namespace CRUD_Application_C__Assessment.Controllers
 
         public IActionResult CompanyEdit(int? id)
         {
-            
+
             return View();
         }
 
@@ -50,6 +50,17 @@ namespace CRUD_Application_C__Assessment.Controllers
         public IActionResult CompanyCreate()
         {
             return View();
+        }
+
+        [HttpPost]
+        public IActionResult CompanyCreate(string name, string email, string logo, string website)
+        {
+            ViewBag.Name = name;
+            ViewBag.Email = email;
+            ViewBag.Logo = logo;
+            ViewBag.Website = website;
+            return View();
+            
         }
     }
 }

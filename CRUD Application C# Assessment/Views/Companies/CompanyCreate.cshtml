@@ -2,6 +2,18 @@
 @model CRUD_Application_C__Assessment.Views.Companies.CompanyCreateModel
 @{
 }
+@using (Html.BeginForm())
+{
+    <div>Name</div>
+    <input id="name" name="name" value="@ViewBag.Name" required>
+    <div>Email</div>
+    <input id="email" name="email" value="@ViewBag.Email" required>
+    <div>Logo</div>
+    <input id="name" name="logo" value="@ViewBag.Logo" required>
+    <div>Website</div>
+    <input id="name" name="website" value="@ViewBag.Website" required>
+    <button type="submit">Create</button>
+}
 
 <div class="">
     <h1 class="display-4">Create Companies Page</h1>
@@ -16,6 +28,8 @@
             </a>
             <a asp-area="" asp-controller="Companies" asp-action="CompanyCreate">Edit Company</a>
         </div>
-        <div><a href="/companies/2">Company 2</a></div>
+        <form method="POST">
+            
+        </form>
     </div>
 </div>
