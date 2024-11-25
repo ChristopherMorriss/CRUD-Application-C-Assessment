@@ -2,34 +2,26 @@
 @model CRUD_Application_C__Assessment.Views.Companies.CompanyCreateModel
 @{
 }
-@using (Html.BeginForm())
-{
-    <div>Name</div>
-    <input id="name" name="name" value="@ViewBag.Name" required>
-    <div>Email</div>
-    <input id="email" name="email" value="@ViewBag.Email" required>
-    <div>Logo</div>
-    <input id="name" name="logo" value="@ViewBag.Logo" required>
-    <div>Website</div>
-    <input id="name" name="website" value="@ViewBag.Website" required>
-    <button type="submit">Create</button>
-}
 
 <div class="">
     <h1 class="display-4">Create Companies Page</h1>
     <div>
-        View:
         <div>
-            <a href="/companies/1">
-                @ViewBag.Name <br />
-                @ViewBag.Email <br />
-                @ViewBag.Logo <br />
-                @ViewBag.Website <br />
-            </a>
-            <a asp-area="" asp-controller="Companies" asp-action="CompanyCreate">Edit Company</a>
+            @using (Html.BeginForm())
+            {
+                @Html.Label("Name")
+                @Html.TextBox("Name", null, new { @class = "form-control" })
+                @Html.Label("Email")
+                @Html.TextBox("Email", null, new { @class = "form-control" })
+                @Html.Label("Logo")
+                @Html.TextBox("Logo", null, new { @class = "form-control" })
+                @Html.Label("Website")
+                @Html.TextBox("Website", null, new { @class = "form-control" })
+
+                <button type="submit">Create</button>
+            }
         </div>
-        <form method="POST">
-            
-        </form>
     </div>
 </div>
+
+

@@ -9,12 +9,12 @@
     <h1 class="display-4">Companies Page</h1>
     <div>
         View:
+        
         <div>
+            
             <a href="/companies/1">
-                    @ViewBag.Name <br /> 
-                    @ViewBag.Email <br />
-                    @ViewBag.Logo <br />
-                    @ViewBag.Website <br />
+               
+                @Model.Name <br /> 
             </a>
             <a asp-area="" asp-controller="Companies" asp-action="CompanyCreate">Create Company</a>
             <a asp-area="" asp-controller="Companies" asp-action="CompanyEdit">Edit Company</a>
