@@ -1,22 +1,23 @@
 ﻿@page
-@model CRUD_Application_C__Assessment.Views.Companies.CompanyCreateModel
+@model CRUD_Application_C__Assessment.Models.CompaniesModel;
 @{
+    ViewBag.Title = "Create A Company";
 }
 
 <div class="">
-    <h1 class="display-4">Create Companies Page</h1>
+    <h1 class="display-4">@ViewBag.Title</h1>
     <div>
         <div>
             @using (Html.BeginForm())
             {
-                @Html.Label("Name")
-                @Html.TextBox("Name", null, new { @class = "form-control" })
-                @Html.Label("Email")
-                @Html.TextBox("Email", null, new { @class = "form-control" })
-                @Html.Label("Logo")
-                @Html.TextBox("Logo", null, new { @class = "form-control" })
-                @Html.Label("Website")
-                @Html.TextBox("Website", null, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Logo)
+                @Html.TextBoxFor(m => m.Logo, new { @class = "form-control" })
+                @Html.LabelFor(m => m.Website)
+                @Html.TextBoxFor(m => m.Website, new { @class = "form-control" })
 
                 <button type="submit">Create</button>
             }
