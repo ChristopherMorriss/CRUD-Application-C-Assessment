@@ -5,15 +5,17 @@
 
 <h1 class="display-4">Edit Companies Page</h1>
 <div>
-     <form method="POST">
-        <div>Name</div>
-        <input id="name" name="name" value="@Model.Name" required>
-        <div>Email</div>
-        <input id="email" name="email" value="@Model.Email" required>
-        <div>Logo</div>
-        <input id="name" name="logo" value="@Model.Logo" required>
-        <div>Website</div>
-        <input id="name" name="website" value="@Model.Website" required>
-        <button type="submit">Update</button>
-     </form>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Logo)
+        @Html.TextBoxFor(m => m.Logo, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Website)
+        @Html.TextBoxFor(m => m.Website, new { @class = "form-control" })
+
+        <button type="submit">Create</button>
+    }
 </div>
