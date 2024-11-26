@@ -1,5 +1,4 @@
-﻿@page
-@using CRUD_Application_C__Assessment.Views.Companies
+﻿@using CRUD_Application_C__Assessment.Views.Companies
 @model CRUD_Application_C__Assessment.Models.CompaniesModel
 @{
     
@@ -15,6 +14,9 @@
             <a href="/companies/1">
                
                 @Model.Name <br /> 
+                @Model.Id <br />
+                @Model.Logo <br />
+                @Model.Website <br />
             </a>
             <a asp-area="" asp-controller="Companies" asp-action="CompanyCreate">Create Company</a>
             <a asp-area="" asp-controller="Companies" asp-action="CompanyEdit">Edit Company</a>
