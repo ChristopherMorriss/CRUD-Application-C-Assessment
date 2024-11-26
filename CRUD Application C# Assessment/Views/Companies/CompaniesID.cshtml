@@ -1,0 +1,27 @@
+﻿@using CRUD_Application_C__Assessment.Views.Companies
+@model CRUD_Application_C__Assessment.Models.CompaniesModel
+@{
+
+}
+
+<div class="text-center">
+    <h1 class="display-4">Companies Page</h1>
+    <div>
+        View:
+
+        <div>
+
+            <a href="/companies/1">
+
+                @Model.Name <br />
+                @Model.Id <br />
+                @Model.Logo <br />
+                @Model.Website <br />
+            </a>
+            <a asp-area="" asp-controller="Companies" asp-action="CompanyCreate">Create Company</a>
+            <a asp-area="" asp-controller="Companies" asp-action="CompanyEdit">Edit Company</a>
+        </div>
+
+    </div>
+</div>
+
