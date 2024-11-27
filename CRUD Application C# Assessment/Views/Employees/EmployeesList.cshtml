@@ -1,22 +1,31 @@
-﻿@page
-@model CRUD_Application_C__Assessment.Views.Home.EmployeesModel
+﻿@using CRUD_Application_C__Assessment.Views.Employees
+@model CRUD_Application_C__Assessment.Models.EmployeesModel[]
 @{
-    
+    ViewBag.Title = "List Of Employees";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Employees Page</h1>
+<div>
+    <h1 class="display-4">@ViewBag.Title</h1>
     <div>
         View:
+
         <div>
-            <a href="/companies/1">
-                @ViewBag.First_name <br />
-                @ViewBag.Last_name <br />
-                @ViewBag.Company <br />
-                @ViewBag.Email <br />
-                @ViewBag.Phone_number <br />
-            </a>
+            @foreach (var employee in Model)
+            {
+                <div class="border border-dark">
+                    <p>@employee.FirstName</p>
+                    <p>@employee.LastName</p>
+                    <p>@employee.Company</p>
+                    <p>@employee.Email</p>
+                    <p>@employee.PhoneNumber</p>
+                </div>
+            }
+
+
+
+
         </div>
-        <div><a href="/companies/2">Company 2</a></div>
+        <a asp-area="" asp-controller="Employees" asp-action="EmployeeCreate">Create Employee</a>
+        <a asp-area="" asp-controller="Employees" asp-action="EmployeeEdit">Edit Employee</a>
     </div>
 </div>

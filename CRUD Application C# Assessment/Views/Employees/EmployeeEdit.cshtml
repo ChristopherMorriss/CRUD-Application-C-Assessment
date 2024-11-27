@@ -1,0 +1,23 @@
+﻿@using CRUD_Application_C__Assessment.Views.Employees
+@model CRUD_Application_C__Assessment.Models.EmployeesModel
+@{
+}
+
+<h1 class="display-4">Edit Companies Page</h1>
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.LabelFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        @Html.LabelFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Company)
+        @Html.TextBoxFor(m => m.Company, new { @class = "form-control" })
+        @Html.LabelFor(m => m.Email)
+        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control" })
+
+        <button type="submit">Create</button>
+    }
+</div>

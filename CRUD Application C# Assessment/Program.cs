@@ -37,8 +37,8 @@ namespace CRUD_Application_C__Assessment
                 context.Companies.Add(new CompaniesModel()
                 {
                     Name = "Default",
-                    Logo = "Raspberry.png",
-                    Email = "email@email.com"
+                    //Logo = "Raspberry.png",
+                    //Email = "email@email.com"
                 });
                 context.SaveChanges();
                 var companies = context.Companies.ToList();
