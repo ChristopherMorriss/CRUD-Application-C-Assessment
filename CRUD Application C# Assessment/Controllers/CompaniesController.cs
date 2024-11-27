@@ -39,7 +39,7 @@ namespace CRUD_Application_C__Assessment.Controllers
         }
         public IActionResult CompanyEdit(int id)
         {
-            CompaniesModel companiesModel = _companiesRepository.GetCompany(id); //No id specified yet, so throws an error
+            CompaniesModel companiesModel = _companiesRepository.GetCompany(id); 
             //var editModel = new CompaniesModel()
             //{
             //    Id = 1,
@@ -67,14 +67,14 @@ namespace CRUD_Application_C__Assessment.Controllers
             return View(companiesModel);
         }
 
-        public IActionResult Delete(int? id)
+        public IActionResult CompanyDelete(int? id)
         {
             CompaniesModel companiesModel = _companiesRepository.GetCompany((int)id);
             return View();
         }
 
         [HttpPost]
-        public IActionResult Delete(int id)
+        public IActionResult CompanyDelete(int id)
         {
             //_companiesRepository.deleteCompany(CompaniesModel);
             
@@ -101,8 +101,10 @@ namespace CRUD_Application_C__Assessment.Controllers
             if (ModelState.IsValid)
             {
                 //_companiesRepository.Addcompany(companiesModel);
+                //TempData["Message"] = "Your entry was successfully added";
                 System.Diagnostics.Debug.WriteLine("Testing"); //This works but needs to be substituted for creating the company
                 return RedirectToAction("CompaniesList");
+                
             }
             return View(companiesModel);
         }
