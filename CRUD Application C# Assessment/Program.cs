@@ -1,5 +1,4 @@
 using CRUD_Application_C__Assessment.Models;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -14,20 +13,18 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
-
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();
-
+//This won't run
 namespace CRUD_Application_C__Assessment
 {
     class Program
@@ -36,6 +33,7 @@ namespace CRUD_Application_C__Assessment
         {
             using (var context = new Context())
             {
+                System.Diagnostics.Debug.WriteLine("Company.Name");
                 context.Companies.Add(new CompaniesModel()
                 {
                     Name = "Default",
@@ -43,13 +41,13 @@ namespace CRUD_Application_C__Assessment
                     Email = "email@email.com"
                 });
                 context.SaveChanges();
-                var Companies = context.Companies.ToList();
-                foreach(var Company in Companies)
+                var companies = context.Companies.ToList();
+                foreach(var Company in companies)
                 {
                     System.Diagnostics.Debug.WriteLine(Company.Name);
-                    //Console.WriteLine(Company.Name);
+                    Console.WriteLine(Company.Name);
                 }
-                //Console.ReadLine();
+                Console.ReadLine();
             }
         }
     }
