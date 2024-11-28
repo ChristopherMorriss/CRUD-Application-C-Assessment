@@ -57,14 +57,14 @@ namespace CRUD_Application_C__Assessment.Controllers
         }
 
         [HttpPost]
-        public IActionResult CompanyDelete(int id)
+        public IActionResult CompanyDelete(CompaniesModel companiesModel)
         {
             //_companiesRepository.deleteCompany(CompaniesModel);
             
             if (ModelState.IsValid)
             {
                 //_companiesRepository.Addcompany(companiesModel);
-                System.Diagnostics.Debug.WriteLine("Testing"); //This works but needs to be substituted for creating the company
+                System.Diagnostics.Debug.WriteLine(companiesModel.Id); //This works but needs to be substituted for creating the company
                 return RedirectToAction("CompaniesList");
             }
             return null;
@@ -83,7 +83,7 @@ namespace CRUD_Application_C__Assessment.Controllers
         {
             if (ModelState.IsValid)
             {
-                _companiesRepository.AddCompany(companiesModel);
+                //_companiesRepository.AddCompany(companiesModel);
                 //TempData["Message"] = "Your entry was successfully added";
                 System.Diagnostics.Debug.WriteLine("Testing"); //This works but needs to be substituted for creating the company
                 return RedirectToAction("CompaniesList");

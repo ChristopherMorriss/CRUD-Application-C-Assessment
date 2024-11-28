@@ -47,6 +47,7 @@ namespace CRUD_Application_C__Assessment.Controllers
         public IActionResult EmployeeDelete(int id) //This one triggers first
         {
             EmployeesModel employeesModel = _employeesRepository.GetEmployee(id);
+            System.Diagnostics.Debug.WriteLine(_employeesRepository.GetEmployee(id));
             return View(employeesModel);
         }
 
@@ -57,7 +58,7 @@ namespace CRUD_Application_C__Assessment.Controllers
             //var employee = 
             if (ModelState.IsValid)
             {
-                //_employeesRepository.Remove(employee);
+                //_employeesRepository.Remove(employeesModel);
                 System.Diagnostics.Debug.WriteLine(employeesModel.Id); //This works but needs to be substituted for creating the employee
                 return RedirectToAction("EmployeesList");
             }
@@ -78,7 +79,7 @@ namespace CRUD_Application_C__Assessment.Controllers
             if (ModelState.IsValid)
             {
                 
-                 EmployeesModel employees = employeesModel.Find(m => m.Id == 1);
+                 //EmployeesModel employees = employeesModel.Find(m => m.Id == 1);
 
                 
                 //TempData["Message"] = "Your entry was successfully added";
