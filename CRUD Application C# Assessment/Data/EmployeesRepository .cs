@@ -10,29 +10,29 @@ namespace CRUD_Application_C__Assessment.Data
             new EmployeesModel()
             {
                 Id = 0,
-                FirstName = "Employee Ltd",
-                LastName = "Twight",
-                Email = "email@email.com",
-                Company = "Logo Ltd",
-                PhoneNumber = "12908409428"
+                FirstName = "Johnathan",
+                LastName = "Moseph",
+                Email = "email@outlook.com",
+                Company = "The Power Institute",
+                PhoneNumber = "07290 366094"
             },
             new EmployeesModel()
             {
-                Id = 0,
-                FirstName = "Employee Ltd",
-                LastName = "Twight",
-                Email = "email@email.com",
-                Company = "Logo Ltd",
-                PhoneNumber = "12908409428"
+                Id = 1,
+                FirstName = "Daniel",
+                LastName = "Cumer",
+                Email = "daniel@sorkymotors.com",
+                Company = "Porkingtons Ltd",
+                PhoneNumber = "07554 396033"
             },
             new EmployeesModel()
             {
-                Id = 0,
-                FirstName = "Employee Ltd",
+                Id = 2,
+                FirstName = "Sophia",
                 LastName = "Twight",
-                Email = "email@email.com",
+                Email = "sophia@newestate.com",
                 Company = "Logo Ltd",
-                PhoneNumber = "12908409428"
+                PhoneNumber = "12346 340908"
                 
             }
         ];

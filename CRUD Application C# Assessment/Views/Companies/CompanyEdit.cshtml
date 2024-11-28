@@ -1,9 +1,10 @@
 ﻿@using CRUD_Application_C__Assessment.Views.Companies;
 @model CRUD_Application_C__Assessment.Models.CompaniesModel
 @{
+
 }
 
-<h1 class="display-4">Edit Companies Page</h1>
+<h1 class="display-4">Edit Company: @Model.Name</h1>
 <div>
     @using (Html.BeginForm())
     {
@@ -12,11 +13,10 @@
         @Html.LabelFor(m => m.Email)
         @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         @Html.LabelFor(m => m.Logo)
-        @Html.TextBoxFor(m => m.Logo, new { @class = "form-control" })
-        <input id="logo" type="file" name="logo">
+        <input id="logo" type="file" name="logo"><br />
         @Html.LabelFor(m => m.Website)
         @Html.TextBoxFor(m => m.Website, new { @class = "form-control" })
 
-        <button type="submit">Create</button>
+        <button type="submit">Submit</button>
     }
 </div>

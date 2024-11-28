@@ -12,7 +12,7 @@ namespace CRUD_Application_C__Assessment.Data
                 Id = 0,
                 Name = "Company Ltd",
                 Email = "email@email.com",
-                Logo = "Logo.png",
+                Logo = null,
                 Website = "www.genericwebsite.com"
             },
             new CompaniesModel()
@@ -20,7 +20,7 @@ namespace CRUD_Application_C__Assessment.Data
                 Id = 1,
                 Name = "Workplace Ltd",
                 Email = "email@gmail.com",
-                Logo = "Logone.png",
+                Logo = null,
                 Website = "www.genericwebsite.co.uk"
             },
             new CompaniesModel()
@@ -28,7 +28,7 @@ namespace CRUD_Application_C__Assessment.Data
                 Id = 2,
                 Name = "Job Ltd",
                 Email = "email@seamail.com",
-                Logo = "Logow.png",
+                Logo = null,
                 Website = "www.genericwebsite.net"
             }
         ];
@@ -52,5 +52,7 @@ namespace CRUD_Application_C__Assessment.Data
             }
             return companyModelInfo;
         }
+
+        
     }
 }

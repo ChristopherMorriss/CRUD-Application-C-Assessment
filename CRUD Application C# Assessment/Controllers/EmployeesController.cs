@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using CRUD_Application_C__Assessment.Data;
 using CRUD_Application_C__Assessment.Models;
+using System.IO;
 
 namespace CRUD_Application_C__Assessment.Controllers
 {
@@ -18,14 +19,6 @@ namespace CRUD_Application_C__Assessment.Controllers
         {
 
             var employeesModel = _employeesRepository.GetEmployee(id);
-            //var employeeModel = new EmployeesModel()
-            //{
-            //    Id = 1,
-            //    Name = "Employee Ltd",
-            //    Email = "email@email.com",
-            //    Logo = "Logo.png",
-            //    Website = "www.genericwebsite.com"
-            //};        
             return View(employeesModel);
         }
 
@@ -37,19 +30,6 @@ namespace CRUD_Application_C__Assessment.Controllers
         public IActionResult EmployeeEdit(int id)
         {
             EmployeesModel employeesModel = _employeesRepository.GetEmployee(id);
-            //var editModel = new EmployeesModel()
-            //{
-            //    Id = 1,
-            //    Name = "Employee Ltd",
-            //    Email = "email@email.com",
-            //    Logo = "Logo.png",
-            //    Website = "www.genericwebsite.com"
-            //};
-            //return View(editModel);
-            if (employeesModel == null)
-            {
-                System.Diagnostics.Debug.WriteLine("Null!");
-            }
             return View(employeesModel);
         }
 
@@ -64,21 +44,21 @@ namespace CRUD_Application_C__Assessment.Controllers
             return View(employeesModel);
         }
 
-        public IActionResult EmployeeDelete(int? id)
+        public IActionResult EmployeeDelete(int id) //This one triggers first
         {
-            EmployeesModel employeesModel = _employeesRepository.GetEmployee((int)id);
-            return View();
+            EmployeesModel employeesModel = _employeesRepository.GetEmployee(id);
+            return View(employeesModel);
         }
 
         [HttpPost]
-        public IActionResult EmployeeDelete(int id)
+        public IActionResult EmployeeDelete(EmployeesModel employeesModel)
         {
             //_employeesRepository.deleteEmployee(EmployeesModel);
-
+            //var employee = 
             if (ModelState.IsValid)
             {
-                //_employeesRepository.Addemployee(employeesModel);
-                System.Diagnostics.Debug.WriteLine("Testing"); //This works but needs to be substituted for creating the employee
+                //_employeesRepository.Remove(employee);
+                System.Diagnostics.Debug.WriteLine(employeesModel.Id); //This works but needs to be substituted for creating the employee
                 return RedirectToAction("EmployeesList");
             }
             return null;
@@ -97,7 +77,10 @@ namespace CRUD_Application_C__Assessment.Controllers
         {
             if (ModelState.IsValid)
             {
-                //_employeesRepository.Addemployee(employeesModel);
+                
+                 EmployeesModel employees = employeesModel.Find(m => m.Id == 1);
+
+                
                 //TempData["Message"] = "Your entry was successfully added";
                 System.Diagnostics.Debug.WriteLine("Testing"); //This works but needs to be substituted for creating the employee
                 return RedirectToAction("EmployeesList");
